@@ -1,0 +1,110 @@
+@charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: fonte1;
+    src: url(Fontes/Octopus\ Game.ttf);
+}
+main{
+    height: 83vh;
+    /* viewport: Diz respeito a parte visivel. neste caso queresmos que o body pegue 100% da altura. Este modo se adapta para o celular e para o compuytar. medida variavel no caso. */
+    width: 100vw;
+    overflow: hidden;
+    background-size:cover;
+    background:linear-gradient(#000000d7, #d6d6d6)
+}
+header{
+    background-color: #000000;
+    width: 100vw;
+}
+h1{
+    font-size: 3em;
+    color: #ffffff;
+    text-align: center;
+    font-family: fonte1, sans-serif;
+}
+.container{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    height: 60%;
+    width: 60%;
+    overflow: hidden;
+    /* Esta linha a seguir possibilita a alteração da posição do elemento com as propriedade utilizadas a seguir */
+    position: absolute;
+    top: 50%; /* parecido com a margin top */
+    left: 50%;
+    /* permite que modifique a posição do eixo central. No caso de imagen o eixo central pode se localizar no canto soperior esquerdo, mas ao aplicar está tag podemos alterar este eixo para o centro real do elemento/imagem */
+    transform: translate(-50%, -50%);
+}
+.imagem img{
+    height: 100%;
+    width: 100%;
+}
+.bar{
+    width: 70px;
+    height: 17px;
+    border: solid 2px #ffffff;
+    border-radius: 5px;
+    margin: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.bar:hover{
+    background-color: #353535;
+}
+.navegacao{
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%);
+    display: flex;
+}
+input{
+    display: none;
+}
+.imagens{
+    display: flex;
+    height: 100%;
+    width: 500%;
+}
+.imagem{
+    /* divido pelo tanto de imagens que usamos, no caso 6. ou 100/6  */
+    width:20%;
+    transition: 0.95s ;
+}
+#imagem1:checked ~ .img1{
+    margin-left:0;
+}
+#imagem2:checked ~ .img1{
+    margin-left:-20%;
+}
+#imagem3:checked ~ .img1{
+    margin-left:-40%;
+}
+#imagem4:checked ~ .img1{
+    margin-left:-60%;
+}
+#imagem5:checked ~ .img1{
+    margin-left:-80%;
+}
+#imagem6:checked ~ .img1{
+    margin-left:-100%;
+}
+.texto mark{
+    background-color: #000000;
+    padding: 10px 50px;
+}
+footer{
+    background-color: #050505;
+    padding: 25px;
+    font-family: 'Inclusive Sans', sans-serif;
+    position:relative;
+    width: 100vw;
+}
+footer p{
+    color: #ffffff;
+}
